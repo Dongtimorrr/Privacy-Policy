@@ -1,0 +1,182 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>GIFdot 정책 문서</title>
+  <style>
+    :root { --max: 860px; }
+    body { margin: 0; font-family: -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",Segoe UI,Roboto,Helvetica,Arial,sans-serif; line-height: 1.6; }
+    header, main, footer { max-width: var(--max); margin: 0 auto; padding: 24px 16px; }
+    header { padding-top: 36px; }
+    h1 { margin: 0 0 8px; font-size: 28px; }
+    h2 { margin: 0 0 8px; font-size: 20px; }
+    p { margin: 8px 0; }
+    .card { border: 1px solid rgba(127,127,127,.35); border-radius: 14px; padding: 16px; margin-top: 16px; }
+    a { text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .meta { opacity: .75; font-size: 14px; }
+    ul { margin: 10px 0 0; padding-left: 18px; }
+    footer { opacity: .75; font-size: 13px; padding-bottom: 36px; }
+    .header-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .lang-picker { display: flex; flex-direction: column; gap: 6px; min-width: 140px; }
+    .lang-picker select {
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(127,127,127,.35);
+      background: transparent;
+      font: inherit;
+    }
+
+    /* Contact button */
+    .contact-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(127,127,127,.35);
+      background: rgba(127,127,127,.10);
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn:hover { background: rgba(127,127,127,.16); text-decoration: none; }
+    .btn:active { transform: translateY(1px); }
+    .btn:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-row">
+      <div>
+        <h1 id="page-title">GIFdot 정책 문서</h1>
+        <p class="meta" id="page-meta">시행일: 2026-02-23 · 최종 개정일: 2026-02-23</p>
+      </div>
+
+      <label class="lang-picker">
+        <span class="meta" id="language-label">언어 선택</span>
+        <select id="language-select" aria-label="문서 언어 선택">
+          <option value="ko">한국어</option>
+          <option value="en">English</option>
+        </select>
+      </label>
+    </div>
+  </header>
+
+  <main>
+    <div class="card">
+      <p id="intro-text">아래 문서는 누구나 열람할 수 있도록 공개되어 있습니다.</p>
+      <ul>
+        <li><a id="privacy-link" href="./privacy.html">개인정보 처리방침 (Privacy Policy)</a></li>
+        <li><a id="legal-link" href="./legal.html">법적 고지 (Legal Notice)</a></li>
+        <li><a id="eula-link" href="./eula.html">이용약관 (EULA)</a></li>
+      </ul>
+    </div>
+
+
+    <div class="card">
+      <div class="contact-row">
+        <p class="meta" style="margin:0;" id="contact-text">
+          문의: <a href="mailto:appledev1920@gmail.com">appledev1920@gmail.com</a>
+        </p>
+
+        <a
+          id="contact-button"
+          class="btn"
+          href="mailto:appledev1920@gmail.com?subject=GIFdot%20%EB%AC%B8%EC%9D%98&amp;body=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94.%0A%0A%28%EC%95%B1%20%EB%B2%84%EC%A0%84%2C%20%EA%B8%B0%EA%B8%B0%20%EB%AA%A8%EB%8D%B8%2C%20%EC%9E%AC%ED%98%84%20%EC%A0%88%EC%B0%A8%29%20%EB%A5%BC%20%EC%93%B0%EB%A9%B4%20%EB%8D%94%20%EB%B9%A0%EB%A5%B4%EA%B2%8C%20%ED%99%95%EC%9D%B8%ED%95%A0%20%EC%88%98%20%EC%9E%88%EC%96%B4%EC%9A%94.%0A%0A-%20%EB%AC%B8%EC%9D%98%20%EB%82%B4%EC%9A%A9%3A%0A-%20%EA%B8%B0%EA%B8%B0%20%EB%AA%A8%EB%8D%B8%3A%0A-%20iOS%20%EB%B2%84%EC%A0%84%3A%0A-%20%EC%95%B1%20%EB%B2%84%EC%A0%84%3A%0A-%20%EC%9E%AC%ED%98%84%20%EC%A0%88%EC%B0%A8%3A%0A"
+          aria-label="이메일로 문의하기"
+        >이메일로 문의하기</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 GIFdot All rights reserved.
+  </footer>
+  <script>
+    const languageSelect = document.getElementById('language-select');
+    const translations = {
+      ko: {
+        htmlLang: 'ko',
+        pageTitle: 'GIFdot 정책 문서',
+        headTitle: 'GIFdot 정책 문서',
+        pageMeta: '시행일: 2026-02-23 · 최종 개정일: 2026-02-23',
+        languageLabel: '언어 선택',
+        languageAria: '문서 언어 선택',
+        introText: '아래 문서는 누구나 열람할 수 있도록 공개되어 있습니다.',
+        privacyText: '개인정보 처리방침 (Privacy Policy)',
+        privacyHref: './privacy.html',
+        legalText: '법적 고지 (Legal Notice)',
+        legalHref: './legal.html',
+        eulaText: '이용약관 (EULA)',
+        eulaHref: './eula.html',
+        contactText: '문의: <a href="mailto:appledev1920@gmail.com">appledev1920@gmail.com</a>',
+        contactButton: '이메일로 문의하기',
+        contactAria: '이메일로 문의하기',
+        contactHref: 'mailto:appledev1920@gmail.com?subject=GIFdot%20%EB%AC%B8%EC%9D%98&body=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94.%0A%0A%28%EC%95%B1%20%EB%B2%84%EC%A0%84%2C%20%EA%B8%B0%EA%B8%B0%20%EB%AA%A8%EB%8D%B8%2C%20%EC%9E%AC%ED%98%84%20%EC%A0%88%EC%B0%A8%29%20%EB%A5%BC%20%EC%93%B0%EB%A9%B4%20%EB%8D%94%20%EB%B9%A0%EB%A5%B4%EA%B2%8C%20%ED%99%95%EC%9D%B8%ED%95%A0%20%EC%88%98%20%EC%9E%88%EC%96%B4%EC%9A%94.%0A%0A-%20%EB%AC%B8%EC%9D%98%20%EB%82%B4%EC%9A%A9%3A%0A-%20%EA%B8%B0%EA%B8%B0%20%EB%AA%A8%EB%8D%B8%3A%0A-%20iOS%20%EB%B2%84%EC%A0%84%3A%0A-%20%EC%95%B1%20%EB%B2%84%EC%A0%84%3A%0A-%20%EC%9E%AC%ED%98%84%20%EC%A0%88%EC%B0%A8%3A%0A'
+      },
+      en: {
+        htmlLang: 'en',
+        pageTitle: 'GIFdot Policy Documents',
+        headTitle: 'GIFdot Policy Documents',
+        pageMeta: 'Effective Date: 2026-02-23 · Last Updated: 2026-02-23',
+        languageLabel: 'Language',
+        languageAria: 'Select document language',
+        introText: 'The documents below are publicly available for anyone to review.',
+        privacyText: 'Privacy Policy',
+        privacyHref: './privacy-en.html',
+        legalText: 'Legal Notice',
+        legalHref: './legal-en.html',
+        eulaText: 'End User License Agreement (Korean only)',
+        eulaHref: './eula.html',
+        contactText: 'Contact: <a href="mailto:appledev1920@gmail.com">appledev1920@gmail.com</a>',
+        contactButton: 'Contact by Email',
+        contactAria: 'Contact by Email',
+        contactHref: 'mailto:appledev1920@gmail.com?subject=GIFdot%20Inquiry&body=Hello.%0A%0APlease include your app version, device model, and steps to reproduce if relevant.%0A%0A-%20Inquiry%3A%0A-%20Device%20model%3A%0A-%20iOS%20version%3A%0A-%20App%20version%3A%0A-%20Steps%20to%20reproduce%3A%0A'
+      }
+    };
+
+    function applyLanguage(nextLang) {
+      const lang = translations[nextLang] ? nextLang : 'ko';
+      const copy = translations[lang];
+      const url = new URL(window.location.href);
+
+      document.documentElement.lang = copy.htmlLang;
+      document.title = copy.headTitle;
+      document.getElementById('page-title').textContent = copy.pageTitle;
+      document.getElementById('page-meta').textContent = copy.pageMeta;
+      document.getElementById('language-label').textContent = copy.languageLabel;
+      languageSelect.setAttribute('aria-label', copy.languageAria);
+      document.getElementById('intro-text').textContent = copy.introText;
+
+      const privacyLink = document.getElementById('privacy-link');
+      privacyLink.textContent = copy.privacyText;
+      privacyLink.href = copy.privacyHref;
+
+      const legalLink = document.getElementById('legal-link');
+      legalLink.textContent = copy.legalText;
+      legalLink.href = copy.legalHref;
+
+      const eulaLink = document.getElementById('eula-link');
+      eulaLink.textContent = copy.eulaText;
+      eulaLink.href = copy.eulaHref;
+
+      document.getElementById('contact-text').innerHTML = copy.contactText;
+      const contactButton = document.getElementById('contact-button');
+      contactButton.textContent = copy.contactButton;
+      contactButton.setAttribute('aria-label', copy.contactAria);
+      contactButton.href = copy.contactHref;
+
+      languageSelect.value = lang;
+      url.searchParams.set('lang', lang);
+      window.history.replaceState({}, '', url);
+    }
+
+    const initialLang = new URL(window.location.href).searchParams.get('lang') || 'ko';
+    applyLanguage(initialLang);
+    languageSelect.addEventListener('change', (event) => applyLanguage(event.target.value));
+  </script>
+</body>
+</html>
