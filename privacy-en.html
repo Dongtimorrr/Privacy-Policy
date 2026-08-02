@@ -32,7 +32,7 @@
     <p class="meta"><a href="./index.html?lang=en">← Policy Documents Home</a> · <a href="./privacy.html" hreflang="ko" lang="ko">한국어</a></p>
     <h1>Privacy Policy</h1>
     <p class="meta">Effective Date: 2026-02-23</p>
-    <p class="meta">Last Updated: 2026-04-17</p>
+    <p class="meta">Last Updated: 2026-08-02</p>
 
     <nav aria-label="Table of contents">
       <a href="#s1">1. Principles</a>
@@ -63,6 +63,7 @@
         <li>The App's core functions, including media selection, conversion/editing, and saving, are generally performed on the user's device.</li>
         <li>The operator does not upload and store users' original photo or video files on a separate server for the App's core functions.</li>
         <li>However, certain information may be processed automatically through external service providers such as Firebase Analytics and Google Mobile Ads SDK in order to operate the service, improve quality, and serve ads.</li>
+        <li>If a user separately consents to receive promotional information, information related to marketing notifications may be processed through Firebase Cloud Messaging (FCM), Apple Push Notification service (APNs), and Cloudflare.</li>
         <li>If a user contacts the operator through "Contact" or customer support, a minimal amount of personal information may be processed to the extent necessary to handle the inquiry.</li>
       </ul>
     </section>
@@ -74,6 +75,8 @@
         <li>Analyzing app usage and improving the service</li>
         <li>Analyzing errors, crashes, and performance issues and improving stability</li>
         <li>Serving ads, measuring ad performance, and preventing abuse</li>
+        <li>Sending promotional app push notifications, including GIFdot discounts, new features, and usage tips, based on separate opt-in consent</li>
+        <li>Managing promotional notification consent and withdrawal records, classifying eligible recipients, and preventing misdelivery and abuse</li>
         <li>Receiving and responding to customer inquiries</li>
         <li>Responding to disputes and fulfilling legal obligations where necessary</li>
       </ul>
@@ -97,7 +100,21 @@
         Note: The operator does not currently implement a separate AppTrackingTransparency permission request for personalized advertising. If such functionality is introduced later, this Policy will be updated accordingly.
       </p>
 
-      <h3 style="margin:14px 0 6px; font-size:16px;">(2) When a user contacts support</h3>
+      <h3 style="margin:14px 0 6px; font-size:16px;">(2) When a user consents to receive promotional information</h3>
+      <ul>
+        <li>App push registration tokens (FCM/APNs) and an app installation identifier</li>
+        <li>Promotional notification consent or withdrawal status and timestamps, and nighttime notification consent or withdrawal status and timestamps</li>
+        <li>App language, recipient category (free use or purchase/subscription type), app version, and consent notice version</li>
+        <li>App integrity verification information, IP address, and request records</li>
+      </ul>
+      <p class="meta">
+        Note: The app installation identifier is stored as a hash in the operator's notification server database. The original FCM/APNs registration tokens are not stored in the operator's notification server database; they are processed by Google's and Apple's push notification services to deliver notifications.
+      </p>
+      <p class="meta">
+        Note: Promotional notifications between 9:00 p.m. and 8:00 a.m. the following day are sent only if the user separately consents to receive nighttime notifications.
+      </p>
+
+      <h3 style="margin:14px 0 6px; font-size:16px;">(3) When a user contacts support</h3>
       <ul>
         <li><strong>Required</strong>: Email address, inquiry details</li>
         <li><strong>Optional</strong>: Attachments voluntarily provided by the user, such as screenshots, logs, or conversion outputs</li>
@@ -113,6 +130,9 @@
       <ul>
         <li>Information related to customer inquiries (email, inquiry content, attachments): retained for 1 year after the inquiry is resolved, then deleted</li>
         <li>Information processed automatically during app use: not separately stored directly by the operator, and may be processed by external service providers for periods determined by their policies and applicable law</li>
+        <li>Active marketing notification subscription information: deleted when consent withdrawal or notification-permission revocation is reflected on the server, or when the processing purpose has been achieved</li>
+        <li>Promotional notification consent and withdrawal records: retained for 3 years from the date each record is received by the server for legal compliance and dispute resolution, then deleted</li>
+        <li>FCM/APNs registration tokens: not stored directly in the operator's notification server database. When consent is withdrawn, the App requests topic unsubscription and token deletion. Processing by external services is governed by each provider's policy.</li>
       </ul>
       <p class="meta">However, if retention is required by applicable law, such information may be retained for the period prescribed by that law.</p>
     </section>
@@ -137,6 +157,9 @@
       <ul>
         <li>Google Firebase Analytics</li>
         <li>Google Mobile Ads SDK (AdMob)</li>
+        <li>Google Firebase Cloud Messaging (FCM): Management of push registration tokens and topics, and notification delivery</li>
+        <li>Apple Push Notification service (APNs): Delivery of push notifications to iOS devices</li>
+        <li>Cloudflare, Inc. (Workers, D1, Queues): Management of consent and withdrawal records and active subscription information, processing of delivery requests, and security</li>
       </ul>
       <p class="meta">The operator implements contractual and security safeguards in accordance with applicable law.</p>
     </section>
@@ -151,6 +174,19 @@
         <li><strong>Timing and Method</strong>: Transmitted over the network when the App is launched or used</li>
         <li><strong>Purpose</strong>: Usage analytics, app quality improvement, ad delivery, and ad performance measurement</li>
       </ul>
+
+      <h3 style="margin:14px 0 6px; font-size:16px;">Overseas Transfers for Marketing Notifications</h3>
+      <ul>
+        <li><strong>Recipients</strong>: Google LLC and its affiliates (FCM), Apple Inc. and its affiliates (APNs), and Cloudflare, Inc. and its affiliates (Workers, D1, Queues)</li>
+        <li><strong>Destination Countries</strong>: The United States and other countries where each provider operates service infrastructure</li>
+        <li><strong>Transferred Items</strong>: App push registration tokens, app installation identifier or its hash, consent and withdrawal information, nighttime notification consent information, app language, recipient category, app version, app integrity verification information, IP address and request records, and notification delivery information</li>
+        <li><strong>Timing and Method</strong>: Transferred over encrypted networks when a user consents, withdraws consent, or changes settings; when the App verifies consent status; and when a notification is delivered</li>
+        <li><strong>Purpose</strong>: Managing consent for promotional app push notifications, classifying eligible recipients, delivering push notifications, preventing misdelivery and abuse, and responding to service failures</li>
+        <li><strong>Retention and Use Period</strong>: Consent and withdrawal records stored by Cloudflare are retained for 3 years. Active subscription information is retained until consent withdrawal or notification-permission revocation is reflected on the server, or until the purpose is achieved. Information processed by Google and Apple is retained in accordance with each provider's policy and for the period necessary to provide the service.</li>
+      </ul>
+      <p class="meta">
+        Note: Users may refuse this marketing notification-related processing by declining consent or withdrawing consent in the App's settings. Refusal does not restrict use of GIFdot's core features, but users will not receive promotional notices such as discounts, new features, and usage tips.
+      </p>
     </section>
 
     <section id="s8">
@@ -159,6 +195,8 @@
       <ul>
         <li>How to exercise: Request by email to <a href="mailto:appledev1920@gmail.com">appledev1920@gmail.com</a></li>
         <li>Handling: Processed within the period prescribed by applicable law, subject to any legal restrictions</li>
+        <li>Withdraw consent to promotional notifications: Turn off "Consent to Receive Promotional Information" in the App's settings, or use the opt-out action provided in a promotional notification</li>
+        <li>Block all App notifications: Disable notifications for GIFdot in iOS Settings</li>
       </ul>
     </section>
 
@@ -189,7 +227,7 @@
     </section>
 
     <div class="box" style="margin-top:24px;">
-      <p class="meta">Document Version: 1.1 · App: GIFdot · Contact: <a href="mailto:appledev1920@gmail.com">appledev1920@gmail.com</a></p>
+      <p class="meta">Document Version: 1.2 · App: GIFdot · Contact: <a href="mailto:appledev1920@gmail.com">appledev1920@gmail.com</a></p>
     </div>
   </main>
 
