@@ -31,8 +31,8 @@
   <header>
     <p class="meta"><a href="./index.html?lang=en">← Policy Documents Home</a> · <a href="./privacy.html" hreflang="ko" lang="ko">한국어</a></p>
     <h1>Privacy Policy</h1>
-    <p class="meta">Effective Date: 2026-02-23</p>
-    <p class="meta">Last Updated: 2026-08-03</p>
+    <p class="meta">Effective Date: 2026-08-04</p>
+    <p class="meta">Last Updated: 2026-08-04</p>
 
     <nav aria-label="Table of contents">
       <a href="#s1">1. Principles</a>
@@ -64,6 +64,7 @@
         <li>The operator does not upload and store users' original photo or video files on a separate server for the App's core functions.</li>
         <li>However, certain information may be processed automatically through external service providers such as Firebase Analytics, Google Mobile Ads SDK, and RevenueCat in order to operate the service, improve quality, serve ads, and manage purchases and subscriptions.</li>
         <li>If a user separately consents to receive promotional information, information related to marketing notifications may be processed through Firebase Cloud Messaging (FCM), Apple Push Notification service (APNs), and Cloudflare.</li>
+        <li>If a user consents to send error diagnostic information, a crash report may be processed through Cloudflare to improve App stability.</li>
         <li>If a user contacts the operator through "Contact" or customer support, a minimal amount of personal information may be processed to the extent necessary to handle the inquiry.</li>
       </ul>
     </section>
@@ -116,7 +117,17 @@
         Note: Promotional notifications between 9:00 p.m. and 8:00 a.m. the following day are sent only if the user separately consents to receive nighttime notifications.
       </p>
 
-      <h3 style="margin:14px 0 6px; font-size:16px;">(3) When a user contacts support</h3>
+      <h3 style="margin:14px 0 6px; font-size:16px;">(3) When a user consents to send error diagnostic information</h3>
+      <ul>
+        <li>Diagnostic report time, signal, exception and termination reason, and error call information</li>
+        <li>App version and build, operating-system version, device type, and transmission consent type</li>
+        <li>App integrity verification information, IP address, and request records</li>
+      </ul>
+      <p class="meta">
+        Note: Photos, videos, edit content, account information, and persistent device identifiers are not included in these crash reports.
+      </p>
+
+      <h3 style="margin:14px 0 6px; font-size:16px;">(4) When a user contacts support</h3>
       <ul>
         <li><strong>Required</strong>: Email address, inquiry details</li>
         <li><strong>Optional</strong>: Attachments voluntarily provided by the user, such as screenshots, logs, or conversion outputs</li>
@@ -135,6 +146,7 @@
         <li>Active marketing notification subscription information: deleted when consent withdrawal or notification-permission revocation is reflected on the server, or when the processing purpose has been achieved</li>
         <li>Promotional notification consent and withdrawal records: retained for 3 years from the date each record is received by the server for legal compliance and dispute resolution, then deleted</li>
         <li>FCM/APNs registration tokens: not stored directly in the operator's notification server database. When consent is withdrawn, the App requests topic unsubscription and token deletion. Processing by external services is governed by each provider's policy.</li>
+        <li>Error diagnostic information sent with consent: retained for 30 days from server receipt, then deleted by the daily cleanup process after that period (within 31 days of receipt)</li>
       </ul>
       <p class="meta">However, if retention is required by applicable law, such information may be retained for the period prescribed by that law.</p>
     </section>
@@ -167,7 +179,7 @@
         <li>RevenueCat, Inc.: Purchase and subscription receipt validation, entitlement management, and purchase analytics</li>
         <li>Google Firebase Cloud Messaging (FCM): Management of push registration tokens and topics, and notification delivery</li>
         <li>Apple Push Notification service (APNs): Delivery of push notifications to iOS devices</li>
-        <li>Cloudflare, Inc. (Workers, D1, Queues): Management of consent and withdrawal records and active subscription information, processing of delivery requests, and security</li>
+        <li>Cloudflare, Inc. (Workers, D1, Queues): Management of consent and withdrawal records and active subscription information, processing of delivery requests, storage and deletion of consented error diagnostic information, and security</li>
       </ul>
       <p class="meta">The operator implements contractual and security safeguards in accordance with applicable law.</p>
     </section>
@@ -204,6 +216,19 @@
       </ul>
       <p class="meta">
         Note: Users may refuse this marketing notification-related processing by declining consent or withdrawing consent in the App's settings. Refusal does not restrict use of GIFdot's core features, but users will not receive promotional notices such as discounts, new features, and usage tips.
+      </p>
+
+      <h3 style="margin:14px 0 6px; font-size:16px;">Overseas Transfers for Error Diagnostics</h3>
+      <ul>
+        <li><strong>Recipient</strong>: Cloudflare, Inc. and its affiliates (Workers, D1)</li>
+        <li><strong>Destination Countries</strong>: The United States and other countries where Cloudflare operates service infrastructure</li>
+        <li><strong>Transferred Items</strong>: Diagnostic report time, signal, exception and termination reason, error call information, App version and build, operating-system version, device type, transmission consent type, App integrity verification information, IP address, and request records</li>
+        <li><strong>Timing and Method</strong>: Transferred over encrypted networks when the user selects "Send This Time" or when error diagnostic information is created after automatic sending has been enabled</li>
+        <li><strong>Purpose</strong>: Analyzing errors and crashes and improving App stability</li>
+        <li><strong>Retention and Use Period</strong>: Error diagnostic information stored by Cloudflare is retained for 30 days from server receipt, then deleted by the daily cleanup process after that period (within 31 days of receipt)</li>
+      </ul>
+      <p class="meta">
+        Note: Users may refuse future error diagnostic transmissions by selecting "Cancel" in the transmission notice or turning off automatic sending in the App's settings. Refusal does not restrict use of GIFdot's core features.
       </p>
     </section>
 
@@ -245,7 +270,7 @@
     </section>
 
     <div class="box" style="margin-top:24px;">
-      <p class="meta">Document Version: 1.3 · App: GIFdot · Contact: <a href="mailto:appledev1920@gmail.com">appledev1920@gmail.com</a></p>
+      <p class="meta">Document Version: 1.4 · App: GIFdot · Contact: <a href="mailto:appledev1920@gmail.com">appledev1920@gmail.com</a></p>
     </div>
   </main>
 
