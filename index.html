@@ -52,7 +52,7 @@
     <div class="header-row">
       <div>
         <h1 id="page-title">GIFdot 정책 문서</h1>
-        <p class="meta" id="page-meta">시행일: 2026-02-23 · 최종 개정일: 2026-04-17</p>
+        <p class="meta" id="page-meta">시행일: 2026-02-23 · 최종 개정일: 2026-08-22</p>
       </div>
 
       <label class="lang-picker">
@@ -71,6 +71,7 @@
       <ul>
         <li><a id="privacy-link" href="./privacy.html">개인정보 처리방침 (Privacy Policy)</a></li>
         <li><a id="legal-link" href="./legal.html">법적 고지 (Legal Notice)</a></li>
+        <li><a id="android-terms-link" href="./terms-android.html">Android 이용약관 (Terms of Use)</a></li>
         <li><a id="eula-link" href="./eula.html">이용약관 (EULA)</a></li>
       </ul>
     </div>
@@ -102,7 +103,7 @@
         htmlLang: 'ko',
         pageTitle: 'GIFdot 정책 문서',
         headTitle: 'GIFdot 정책 문서',
-        pageMeta: '시행일: 2026-02-23 · 최종 개정일: 2026-04-17',
+        pageMeta: '시행일: 2026-02-23 · 최종 개정일: 2026-08-22',
         languageLabel: '언어 선택',
         languageAria: '문서 언어 선택',
         introText: '아래 문서는 누구나 열람할 수 있도록 공개되어 있습니다.',
@@ -110,6 +111,8 @@
         privacyHref: './privacy.html',
         legalText: '법적 고지 (Legal Notice)',
         legalHref: './legal.html',
+        androidTermsText: 'Android 이용약관 (Terms of Use)',
+        androidTermsHref: './terms-android.html',
         eulaText: '이용약관 (EULA)',
         eulaHref: './eula.html',
         contactText: '문의: <a href="mailto:appledev1920@gmail.com">appledev1920@gmail.com</a>',
@@ -121,7 +124,7 @@
         htmlLang: 'en',
         pageTitle: 'GIFdot Policy Documents',
         headTitle: 'GIFdot Policy Documents',
-        pageMeta: 'Effective Date: 2026-02-23 · Last Updated: 2026-04-17',
+        pageMeta: 'Effective Date: 2026-02-23 · Last Updated: 2026-08-22',
         languageLabel: 'Language',
         languageAria: 'Select document language',
         introText: 'The documents below are publicly available for anyone to review.',
@@ -129,6 +132,8 @@
         privacyHref: './privacy-en.html',
         legalText: 'Legal Notice',
         legalHref: './legal-en.html',
+        androidTermsText: 'Android Terms of Use',
+        androidTermsHref: './terms-android-en.html',
         eulaText: 'End User License Agreement (Korean only)',
         eulaHref: './eula.html',
         contactText: 'Contact: <a href="mailto:appledev1920@gmail.com">appledev1920@gmail.com</a>',
@@ -158,6 +163,10 @@
       const legalLink = document.getElementById('legal-link');
       legalLink.textContent = copy.legalText;
       legalLink.href = copy.legalHref;
+
+      const androidTermsLink = document.getElementById('android-terms-link');
+      androidTermsLink.textContent = copy.androidTermsText;
+      androidTermsLink.href = copy.androidTermsHref;
 
       const eulaLink = document.getElementById('eula-link');
       eulaLink.textContent = copy.eulaText;
