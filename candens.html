@@ -30,7 +30,7 @@
   <header>
     <h1>Candens 개인정보 처리방침</h1>
     <p class="meta">시행일: 2026년 8월 29일</p>
-    <p class="meta">최종 개정일: 2026년 8월 29일</p>
+    <p class="meta">최종 개정일: 2026년 10월 8일</p>
     <p class="meta"><a href="candens-ja.html" lang="ja">日本語</a> · <a href="candens-zh-hant.html" lang="zh-Hant">繁體中文</a></p>
 
     <nav aria-label="목차">
@@ -59,6 +59,7 @@
         <li>운영자는 사진이나 파일의 내용, 파일명, 사진에 포함된 촬영 위치와 촬영 일시를 개발자 서버로 전송하거나 보관하지 않습니다.</li>
         <li>앱은 계정을 만들거나 로그인을 요구하지 않습니다.</li>
         <li>앱 이용 현황 분석과 기능 개선을 위해 Google Firebase Analytics를 사용하며, 아래에 적은 최소한의 정보가 자동 처리될 수 있습니다.</li>
+        <li>인앱결제와 구매 복원을 위해 RevenueCat을 사용하며, RevenueCat이 생성한 익명 사용자 식별자와 Apple 거래·구매 이력 및 권한 상태가 처리될 수 있습니다.</li>
         <li>이용자가 이메일로 문의하면 답변에 필요한 정보만 처리합니다.</li>
       </ul>
     </section>
@@ -68,6 +69,7 @@
       <ul>
         <li>앱 이용 현황 분석과 기능 개선</li>
         <li>기능의 성공·실패 여부 확인과 품질 개선</li>
+        <li>인앱결제 제공, 구매 복원, 구매 권한 확인과 부정 거래 방지</li>
         <li>고객 문의 접수와 답변</li>
         <li>관련 법령상 의무 이행과 분쟁 대응이 필요한 경우</li>
       </ul>
@@ -84,7 +86,14 @@
       </ul>
       <p class="meta">위 정보는 앱 실행과 이용 과정에서 Firebase Analytics SDK를 통해 자동 전송됩니다. 앱은 광고 식별자(IDFA)를 수집하지 않으며, 이용자를 여러 회사의 앱이나 웹사이트에 걸쳐 추적하지 않습니다.</p>
 
-      <h3 style="margin:14px 0 6px; font-size:16px;">(2) 이메일 문의 시 처리되는 정보</h3>
+      <h3 style="margin:14px 0 6px; font-size:16px;">(2) 인앱결제 이용 시 처리되는 정보</h3>
+      <ul>
+        <li>RevenueCat이 생성하는 익명 App User ID</li>
+        <li>Apple 거래 정보와 구매 이력, 구매 복원 결과 및 RevenueCat 권한(entitlement) 상태</li>
+      </ul>
+      <p class="meta">RevenueCat은 결제 기능 제공, 구매 권한 확인, 구매 복원, 부정 거래 방지와 자체 분석을 위해 위 정보를 처리합니다. 앱은 계정이나 이메일을 RevenueCat에 제공하지 않습니다.</p>
+
+      <h3 style="margin:14px 0 6px; font-size:16px;">(3) 이메일 문의 시 처리되는 정보</h3>
       <ul>
         <li>필수: 이메일 주소와 문의 내용</li>
         <li>선택: 이용자가 직접 첨부한 스크린샷, 사진, 로그 등</li>
@@ -98,6 +107,7 @@
         <li>촬영하거나 가져온 사진, 필름통 정보와 카메라 설정은 이용자의 기기에 저장됩니다.</li>
         <li>지원되는 기기에서는 사진 앨범 제목을 기기의 온디바이스 언어 모델로 생성할 수 있습니다.</li>
         <li>카메라 권한은 사진 촬영, 동작 정보는 수평 안내, 사진 추가 권한은 사진 앱 저장에 사용합니다.</li>
+        <li>동영상 촬영 시 카메라와 마이크 권한을 사용하며, 동영상과 녹음된 소리는 이용자의 기기에서 처리되고 필름통에 저장됩니다. 동영상 불러오기 시 선택한 파일을 기기에서 읽어 처리합니다.</li>
         <li>위치 권한은 이용자가 “위치 정보 저장”을 켠 경우 촬영한 사진에 위치 정보를 기록하는 데만 사용합니다. 해당 위치는 Firebase Analytics나 운영자 서버로 전송하지 않습니다.</li>
       </ul>
       <p>권한은 iOS 설정에서 언제든지 변경할 수 있으며, 위치 정보 저장은 앱 설정에서 끌 수 있습니다.</p>
@@ -105,7 +115,7 @@
 
     <section id="s5">
       <h2>5. 외부 서비스 이용과 국외 이전</h2>
-      <p>운영자는 이용 현황 분석을 위해 다음 외부 서비스를 이용합니다.</p>
+      <p>운영자는 이용 현황 분석과 인앱결제 처리를 위해 다음 외부 서비스를 이용합니다.</p>
       <ul>
         <li><strong>처리자:</strong> Google LLC 및 그 계열사(Google Firebase Analytics)</li>
         <li><strong>처리 목적:</strong> 앱 이용 현황 분석과 기능·품질 개선</li>
@@ -114,8 +124,16 @@
         <li><strong>이전 국가:</strong> 미국 등 Google과 하위처리자가 서비스 시설을 운영하는 국가</li>
         <li><strong>보유 기간:</strong> 사용자·이벤트 수준 데이터는 운영자가 설정한 기간에 따라 최종 활동 후 최대 14개월 범위에서 보관될 수 있으며, 목적 달성 또는 삭제 요청 처리 시 더 일찍 삭제될 수 있습니다. 집계된 통계 보고서는 Google Analytics 정책에 따라 별도로 유지될 수 있습니다.</li>
       </ul>
+      <ul>
+        <li><strong>처리자:</strong> RevenueCat, Inc.</li>
+        <li><strong>처리 목적:</strong> 인앱결제 제공, Apple 거래·구매 이력 확인, 구매 복원, 권한 상태 제공, 부정 거래 방지와 서비스 분석</li>
+        <li><strong>처리 항목:</strong> 익명 App User ID, Apple 거래·구매 이력, 구매 복원 결과, RevenueCat 권한 상태</li>
+        <li><strong>이전 시점과 방법:</strong> 결제·구매 복원·권한 확인 및 관련 SDK 요청 시 암호화된 네트워크를 통해 전송</li>
+        <li><strong>이전 국가:</strong> 미국 등 RevenueCat 및 그 하위처리자가 서비스 시설을 운영하는 국가</li>
+        <li><strong>보유 기간:</strong> RevenueCat 처리 정보는 RevenueCat의 보유 정책과 운영자와의 계약에 따라 보관되며, 삭제 요청·법적 의무·분쟁 해결 등에 필요한 범위에서 유지될 수 있습니다.</li>
+      </ul>
       <p>운영자는 Google이 본 방침과 관련 법령이 요구하는 수준과 동등한 보호조치를 제공하도록 관련 약관과 보안 설정을 적용합니다.</p>
-      <p class="meta">자세한 내용은 <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google 개인정보처리방침</a>과 <a href="https://firebase.google.com/terms/data-processing-terms" rel="noopener noreferrer">Firebase 데이터 처리 및 보안 약관</a>에서 확인할 수 있습니다.</p>
+      <p class="meta">자세한 내용은 <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google 개인정보처리방침</a>, <a href="https://firebase.google.com/terms/data-processing-terms" rel="noopener noreferrer">Firebase 데이터 처리 및 보안 약관</a>, <a href="https://www.revenuecat.com/privacy-policy" rel="noopener noreferrer">RevenueCat 개인정보처리방침</a>에서 확인할 수 있습니다.</p>
     </section>
 
     <section id="s6">
@@ -124,6 +142,7 @@
         <li>앱 필름통의 사진과 설정: 이용자가 앱에서 삭제하거나 앱을 제거할 때까지 기기에 보관됩니다.</li>
         <li>사진 앱에 저장한 사본: 사진 앱에서 이용자가 직접 관리합니다.</li>
         <li>Firebase Analytics 정보: 제5항에 적은 기간과 Google의 정책에 따라 처리됩니다.</li>
+        <li>RevenueCat 인앱결제 정보: RevenueCat의 보유 정책과 운영자와의 계약에 따라 처리됩니다. 삭제 문의는 제7항의 이메일로 접수해 주시면 운영자가 RevenueCat에 필요한 조치를 요청합니다.</li>
         <li>이메일 문의 정보: 문의 처리 완료 후 1년간 보관한 뒤 삭제합니다. 이용자가 더 이른 삭제를 요청하면 법령상 보관 의무가 없는 범위에서 삭제합니다.</li>
       </ul>
       <p class="meta">관계 법령에 따라 보관이 필요한 경우에는 해당 법령이 정한 기간 동안 보관할 수 있습니다.</p>
@@ -136,6 +155,7 @@
         <li>요청 방법: <a href="mailto:appledev1920@gmail.com?subject=Candens%20%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4%20%EB%AC%B8%EC%9D%98">appledev1920@gmail.com</a></li>
         <li>기기 내 사진과 정보는 앱의 삭제 기능 또는 앱 제거를 통해 삭제할 수 있습니다.</li>
         <li>카메라·동작·사진·위치 권한은 iOS 설정에서 변경하거나 철회할 수 있습니다.</li>
+        <li>RevenueCat이 처리하는 구매 관련 정보의 열람·정정·삭제 문의는 위 이메일로 요청할 수 있습니다. 문의 시 Apple 거래 식별자 등 구매 확인에 필요한 정보를 함께 제공하면 처리에 도움이 됩니다.</li>
       </ul>
       <p>운영자는 관련 법령이 정한 기한과 기술적으로 가능한 범위에서 요청을 처리합니다.</p>
     </section>

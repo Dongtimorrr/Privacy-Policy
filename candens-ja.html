@@ -31,7 +31,7 @@
   <header>
     <h1>Candens <span class="nowrap">プライバシーポリシー</span></h1>
     <p class="meta">施行日：2026年8月29日</p>
-    <p class="meta">最終改定日：2026年8月29日</p>
+    <p class="meta">最終改定日：2026年10月8日</p>
     <p class="meta"><a href="candens.html" lang="ko">한국어</a> · <a href="candens-zh-hant.html" lang="zh-Hant">繁體中文</a></p>
 
     <nav aria-label="目次">
@@ -60,6 +60,7 @@
         <li>運営者は、写真やファイルの内容、ファイル名、写真に含まれる撮影位置および撮影日時を開発者のサーバーへ送信または保存しません。</li>
         <li>本アプリはアカウントの作成やログインを求めません。</li>
         <li>利用状況の分析と機能改善のためGoogle Firebase Analyticsを使用し、以下に記載する必要最小限の情報が自動的に処理される場合があります。</li>
+        <li>アプリ内課金と購入の復元のためRevenueCatを使用し、RevenueCatが生成する匿名ユーザー識別子、Appleの取引・購入履歴および権限状態を処理する場合があります。</li>
         <li>ユーザーがメールで問い合わせた場合は、回答に必要な情報のみを取り扱います。</li>
       </ul>
     </section>
@@ -69,6 +70,7 @@
       <ul>
         <li>本アプリの利用状況の分析と機能改善</li>
         <li>機能の成功・失敗状況の確認と品質改善</li>
+        <li>アプリ内課金の提供、購入の復元、購入権限の確認および不正取引の防止</li>
         <li>お問い合わせの受付と回答</li>
         <li>関連法令上の義務履行および紛争対応が必要となった場合の対応</li>
       </ul>
@@ -85,7 +87,14 @@
       </ul>
       <p class="meta">これらの情報は、本アプリの起動および利用時にFirebase Analytics SDKを通じて自動送信されます。本アプリは広告識別子（IDFA）を収集せず、他社のアプリやウェブサイトを横断してユーザーを追跡しません。</p>
 
-      <h3 style="margin:14px 0 6px; font-size:16px;">(2) メールでのお問い合わせ時に取り扱う情報</h3>
+      <h3 style="margin:14px 0 6px; font-size:16px;">(2) アプリ内課金の利用時に取り扱う情報</h3>
+      <ul>
+        <li>RevenueCatが生成する匿名App User ID</li>
+        <li>Appleの取引情報と購入履歴、購入の復元結果およびRevenueCatの権限（entitlement）状態</li>
+      </ul>
+      <p class="meta">RevenueCatは、課金機能の提供、購入権限の確認、購入の復元、不正取引の防止および独自の分析のために上記情報を処理します。本アプリはアカウントやメールアドレスをRevenueCatに提供しません。</p>
+
+      <h3 style="margin:14px 0 6px; font-size:16px;">(3) メールでのお問い合わせ時に取り扱う情報</h3>
       <ul>
         <li>必須：メールアドレスおよびお問い合わせ内容</li>
         <li>任意：ユーザー自身が添付したスクリーンショット、写真、ログなど</li>
@@ -99,6 +108,7 @@
         <li>撮影または読み込んだ写真、フィルムロールの情報、カメラ設定はユーザーの端末に保存されます。</li>
         <li>対応端末では、端末上の言語モデルを使って写真アルバムのタイトルを生成できます。</li>
         <li>カメラ権限は写真撮影、モーション情報は水平ガイド、写真追加権限は写真アプリへの保存に使用します。</li>
+        <li>動画撮影時にはカメラとマイクの権限を使用します。動画と録音した音声はユーザーの端末上で処理され、フィルムロールに保存されます。動画を読み込む場合は、選択したファイルを端末上で読み込み、処理します。</li>
         <li>位置情報の権限は、ユーザーが「位置情報を保存」を有効にした場合に、撮影した写真へ位置情報を記録するためだけに使用します。この位置情報をFirebase Analyticsまたは運営者のサーバーへ送信することはありません。</li>
       </ul>
       <p>権限はいつでもiOSの「設定」で変更でき、位置情報の保存は本アプリの設定で無効にできます。</p>
@@ -106,7 +116,7 @@
 
     <section id="s5">
       <h2>5. 外部サービスの利用と国外移転</h2>
-      <p>運営者は、利用状況の分析に以下の外部サービスを使用します。</p>
+      <p>運営者は、利用状況の分析とアプリ内課金の処理に以下の外部サービスを使用します。</p>
       <ul>
         <li><strong>処理者：</strong>Google LLCおよびその関連会社（Google Firebase Analytics）</li>
         <li><strong>利用目的：</strong>本アプリの利用状況の分析と機能・品質の改善</li>
@@ -115,8 +125,16 @@
         <li><strong>移転先の国：</strong>米国など、Googleおよびそのサブプロセッサがサービス施設を運営する国</li>
         <li><strong>保存期間：</strong>ユーザーおよびイベント単位のデータは、運営者が設定した期間に従い、最終アクティビティから最長14か月間保存される場合があります。利用目的の達成または削除依頼への対応により、これより早く削除される場合があります。集計された統計レポートは、Google Analyticsのポリシーに従って別途保持される場合があります。</li>
       </ul>
+      <ul>
+        <li><strong>処理者：</strong>RevenueCat, Inc.</li>
+        <li><strong>利用目的：</strong>アプリ内課金の提供、Appleの取引・購入履歴の確認、購入の復元、権限状態の提供、不正取引の防止およびサービス分析</li>
+        <li><strong>処理項目：</strong>匿名App User ID、Appleの取引・購入履歴、購入の復元結果、RevenueCatの権限状態</li>
+        <li><strong>移転の時期と方法：</strong>購入、購入の復元、権限確認および関連SDKのリクエスト時に暗号化されたネットワークを通じて送信</li>
+        <li><strong>移転先の国：</strong>米国など、RevenueCatおよびそのサブプロセッサがサービス施設を運営する国</li>
+        <li><strong>保存期間：</strong>RevenueCatが処理する情報は、RevenueCatの保存ポリシーおよび運営者との契約に従って保存され、削除依頼、法的義務、紛争解決などに必要な範囲で保持される場合があります。</li>
+      </ul>
       <p>運営者は、Googleが本ポリシーおよび関連法令で求められる水準と同等の保護措置を提供するよう、関連規約およびセキュリティ設定を適用します。</p>
-      <p class="meta">詳細は、<a href="https://policies.google.com/privacy" rel="noopener noreferrer">Googleプライバシーポリシー</a>および<a href="https://firebase.google.com/terms/data-processing-terms" rel="noopener noreferrer">Firebaseデータ処理およびセキュリティ規約</a>をご確認ください。</p>
+      <p class="meta">詳細は、<a href="https://policies.google.com/privacy" rel="noopener noreferrer">Googleプライバシーポリシー</a>、<a href="https://firebase.google.com/terms/data-processing-terms" rel="noopener noreferrer">Firebaseデータ処理およびセキュリティ規約</a>および<a href="https://www.revenuecat.com/privacy-policy" rel="noopener noreferrer">RevenueCatプライバシーポリシー</a>をご確認ください。</p>
     </section>
 
     <section id="s6">
@@ -125,6 +143,7 @@
         <li>本アプリのフィルムロールにある写真と設定：ユーザーが本アプリで削除するか、本アプリをアンインストールするまで端末に保存されます。</li>
         <li>写真アプリに保存したコピー：ユーザーが写真アプリで直接管理します。</li>
         <li>Firebase Analyticsの情報：第5項に記載した期間およびGoogleのポリシーに従って処理されます。</li>
+        <li>RevenueCatのアプリ内課金情報：RevenueCatの保存ポリシーおよび運営者との契約に従って処理されます。削除に関するお問い合わせは、第7項のメールアドレスからお送りください。運営者がRevenueCatに必要な対応を依頼します。</li>
         <li>メールでのお問い合わせ情報：対応完了後1年間保存した後、削除します。ユーザーから早期削除の依頼があった場合は、法令上の保存義務がない範囲で削除します。</li>
       </ul>
       <p class="meta">関連法令により保存が必要な場合は、その法令で定められた期間にわたり保存することがあります。</p>
@@ -137,6 +156,7 @@
         <li>依頼方法：<a href="mailto:appledev1920@gmail.com?subject=Candens%20%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">appledev1920@gmail.com</a></li>
         <li>端末内の写真と情報は、本アプリの削除機能または本アプリのアンインストールによって削除できます。</li>
         <li>カメラ、モーション、写真、位置情報の権限は、iOSの「設定」で変更または取り消すことができます。</li>
+        <li>RevenueCatが取り扱う購入関連情報の開示、訂正または削除については、上記メールアドレスから依頼できます。Appleの取引識別子など、購入確認に必要な情報を添えると対応が円滑になります。</li>
       </ul>
       <p>運営者は、関連法令で定められた期限および技術的に可能な範囲で依頼に対応します。</p>
     </section>
