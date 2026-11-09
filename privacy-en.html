@@ -32,7 +32,7 @@
     <p class="meta"><a href="./index.html?lang=en">← Policy Documents Home</a> · <a href="./privacy.html" hreflang="ko" lang="ko">한국어</a></p>
     <h1>Privacy Policy</h1>
     <p class="meta">Effective Date: 2026-08-04</p>
-    <p class="meta">Last Updated: 2026-08-04</p>
+    <p class="meta">Last Updated: 2026-11-09</p>
 
     <nav aria-label="Table of contents">
       <a href="#s1">1. Principles</a>
@@ -64,6 +64,7 @@
         <li>The operator does not upload and store users' original photo or video files on a separate server for the App's core functions.</li>
         <li>However, certain information may be processed automatically through external service providers such as Firebase Analytics, Google Mobile Ads SDK, and RevenueCat in order to operate the service, improve quality, serve ads, and manage purchases and subscriptions.</li>
         <li>If a user separately consents to receive promotional information, information related to marketing notifications may be processed through Firebase Cloud Messaging (FCM), Apple Push Notification service (APNs), and Cloudflare.</li>
+        <li>If a user participates in Friend Invitations, Cloudflare (Workers, D1, Queues) and relevant Apple and Google services may process information to verify invitation relationships, first GIF or MP4 conversion completion, reward status, and referral-reward notifications.</li>
         <li>If a user consents to send error diagnostic information, a crash report may be processed through Cloudflare to improve App stability.</li>
         <li>If a user contacts the operator through "Contact" or customer support, a minimal amount of personal information may be processed to the extent necessary to handle the inquiry.</li>
       </ul>
@@ -79,6 +80,7 @@
         <li>Checking purchase and subscription status, validating receipts, providing Pro features, and analyzing purchases</li>
         <li>Sending promotional app push notifications, including GIFdot discounts, new features, and usage tips, based on separate opt-in consent</li>
         <li>Managing promotional notification consent and withdrawal records, classifying eligible recipients, and preventing misdelivery and abuse</li>
+        <li>Verifying Friend Invitation relationships, first GIF or MP4 conversion completion, reward issuance, registration, duplicate prevention, and reward notifications</li>
         <li>Receiving and responding to customer inquiries</li>
         <li>Responding to disputes and fulfilling legal obligations where necessary</li>
       </ul>
@@ -103,21 +105,30 @@
         Note: The operator does not currently implement a separate AppTrackingTransparency permission request for personalized advertising. If such functionality is introduced later, this Policy will be updated accordingly.
       </p>
 
-      <h3 style="margin:14px 0 6px; font-size:16px;">(2) When a user consents to receive promotional information</h3>
+      <h3 style="margin:14px 0 6px; font-size:16px;">(2) When a user consents to promotional information</h3>
       <ul>
-        <li>App push registration tokens (FCM/APNs) and an app installation identifier</li>
+        <li>App push registration tokens (FCM/APNs) and a hashed installation identifier</li>
         <li>Promotional notification consent or withdrawal status and timestamps, and nighttime notification consent or withdrawal status and timestamps</li>
         <li>App language, recipient category (free use or purchase/subscription type), app version, and consent notice version</li>
         <li>App integrity verification information, IP address, and request records</li>
       </ul>
       <p class="meta">
-        Note: The app installation identifier is stored as a hash in the operator's notification server database. The original FCM/APNs registration tokens are not stored in the operator's notification server database; they are processed by Google's and Apple's push notification services to deliver notifications.
+        Note: The app installation identifier is stored as a hash in the operator's notification server database. The original FCM/APNs registration tokens for general marketing notifications are not stored in the operator's notification server database; they are processed by Google's and Apple's push notification services to deliver notifications.
       </p>
       <p class="meta">
         Note: Promotional notifications between 9:00 p.m. and 8:00 a.m. the following day are sent only if the user separately consents to receive nighttime notifications.
       </p>
 
-      <h3 style="margin:14px 0 6px; font-size:16px;">(3) When a user consents to send error diagnostic information</h3>
+      <h3 style="margin:14px 0 6px; font-size:16px;">(3) When a user consents to Friend Invitation reward notifications</h3>
+      <ul>
+        <li>Hashed installation identifier, original FCM token, enabled status, confirmation and update timestamps, and sending status for the Friend Invitation reward-notification target</li>
+        <li>APNs token and notification payload for Friend Invitation notifications</li>
+      </ul>
+      <p class="meta">
+        Note: Friend Invitation reward notifications are managed through GIFdot's notification permission in iOS Settings; the App does not provide a separate in-app off switch. The necessary information may be stored in Cloudflare D1 for the Friend Invitation notification target. Apple account IDs, names, email addresses, and original photos or videos are not stored.
+      </p>
+
+      <h3 style="margin:14px 0 6px; font-size:16px;">(4) When a user consents to send error diagnostic information</h3>
       <ul>
         <li>Diagnostic report time, signal, exception and termination reason, and error call information</li>
         <li>App version and build, operating-system version, device type, and transmission consent type</li>
@@ -127,13 +138,26 @@
         Note: Photos, videos, edit content, account information, and persistent device identifiers are not included in these crash reports.
       </p>
 
-      <h3 style="margin:14px 0 6px; font-size:16px;">(4) When a user contacts support</h3>
+      <h3 style="margin:14px 0 6px; font-size:16px;">(5) When a user contacts support</h3>
       <ul>
         <li><strong>Required</strong>: Email address, inquiry details</li>
         <li><strong>Optional</strong>: Attachments voluntarily provided by the user, such as screenshots, logs, or conversion outputs</li>
       </ul>
       <p class="meta">
         Note: Attachments may include device information or file metadata. Users should review materials before sending them to avoid including sensitive information.
+      </p>
+
+      <h3 style="margin:14px 0 6px; font-size:16px;">(6) Information that may be processed for Friend Invitations</h3>
+      <ul>
+        <li>Pseudonymous participant identifier (a hash derived from the Apple AppTransaction identifier and App bundle ID), invitation code, and invitation relationship</li>
+        <li>Event ID, creation and completion timestamps, and conversion-result format for the first GIF or MP4 conversion</li>
+        <li>Reward status, hashed voucher-code and batch metadata, expiration and assignment status, and reward registration, scheduling, and redemption confirmation</li>
+        <li>Original App acquisition time, Apple transaction and product identifiers needed to confirm rewards, verification public keys, and notification delivery status</li>
+        <li>Signed evidence, key identifiers, and verification counters needed to verify Apple AppTransaction, Transaction, and App Attest proofs</li>
+        <li>Hashed installation identifier, original FCM token, enabled status, confirmation and update timestamps, and delivery status for a Friend Invitation notification target. APNs tokens are processed by Apple's and Google's push services.</li>
+      </ul>
+      <p class="meta">
+        Note: Apple account IDs, Apple passwords, names, email addresses, original photos or videos, and edit files are not collected for Friend Invitation processing. Information processed by Apple, Google, and Cloudflare as part of their services is subject to each provider's policy.
       </p>
     </section>
 
@@ -142,10 +166,12 @@
       <p>The operator deletes personal information without delay once the purpose of processing has been achieved.</p>
       <ul>
         <li>Information related to customer inquiries (email, inquiry content, attachments): retained for 1 year after the inquiry is resolved, then deleted</li>
-        <li>Information processed automatically during app use: not separately stored directly by the operator, and may be processed by external service providers for periods determined by their policies and applicable law</li>
+        <li>Information automatically processed through external SDKs: except for operator-held information described separately below, processed by external providers for periods determined by their policies and applicable law</li>
         <li>Active marketing notification subscription information: deleted when consent withdrawal or notification-permission revocation is reflected on the server, or when the processing purpose has been achieved</li>
         <li>Promotional notification consent and withdrawal records: retained for 3 years from the date each record is received by the server for legal compliance and dispute resolution, then deleted</li>
-        <li>FCM/APNs registration tokens: not stored directly in the operator's notification server database. When consent is withdrawn, the App requests topic unsubscription and token deletion. Processing by external services is governed by each provider's policy.</li>
+        <li>Marketing FCM/APNs tokens: not stored in marketing subscription records. When marketing consent is withdrawn, the App requests topic unsubscription and token deletion. External processing follows each provider's policy.</li>
+        <li>Friend Invitation FCM tokens: deleted and the notification target disabled when the App detects revoked notification permission or a stopped campaign and sends an authenticated withdrawal request. These requests are accepted even while the campaign is off. Tokens older than 30 days since their last successful registration or refresh are excluded from delivery and deleted by daily cleanup (normally within 31 days of the last refresh). Tokens confirmed invalid by the delivery service are also deleted. Revocation may not reach the server immediately while the device is offline or the App is not reopened. Installation-to-participant links and delivery records, excluding the token, follow the retention rule below.</li>
+        <li>Friend Invitation relationships, first-conversion, reward, code-assignment, and transaction-confirmation records: retained while needed to operate the campaign, process earned benefits, and prevent duplicate rewards. Withdrawing Friend Invitation notifications or disabling a token does not by itself delete existing ledger records; they may remain until those purposes end. Individual deletion requests may be submitted by email and are reviewed for handling.</li>
         <li>Error diagnostic information sent with consent: retained for 30 days from server receipt, then deleted by the daily cleanup process after that period (within 31 days of receipt)</li>
       </ul>
       <p class="meta">However, if retention is required by applicable law, such information may be retained for the period prescribed by that law.</p>
@@ -179,7 +205,7 @@
         <li>RevenueCat, Inc.: Purchase and subscription receipt validation, entitlement management, and purchase analytics</li>
         <li>Google Firebase Cloud Messaging (FCM): Management of push registration tokens and topics, and notification delivery</li>
         <li>Apple Push Notification service (APNs): Delivery of push notifications to iOS devices</li>
-        <li>Cloudflare, Inc. (Workers, D1, Queues): Management of consent and withdrawal records and active subscription information, processing of delivery requests, storage and deletion of consented error diagnostic information, and security</li>
+        <li>Cloudflare, Inc. (Workers, D1, Queues): Management of consent and withdrawal records, Friend Invitation relationships, pseudonymous participant identifiers, conversion and reward ledgers, notification targets, delivery requests, storage and deletion of consented error diagnostic information, and security</li>
       </ul>
       <p class="meta">The operator implements contractual and security safeguards in accordance with applicable law.</p>
     </section>
@@ -212,11 +238,21 @@
         <li><strong>Transferred Items</strong>: App push registration tokens, app installation identifier or its hash, consent and withdrawal information, nighttime notification consent information, app language, recipient category, app version, app integrity verification information, IP address and request records, and notification delivery information</li>
         <li><strong>Timing and Method</strong>: Transferred over encrypted networks when a user consents, withdraws consent, or changes settings; when the App verifies consent status; and when a notification is delivered</li>
         <li><strong>Purpose</strong>: Managing consent for promotional app push notifications, classifying eligible recipients, delivering push notifications, preventing misdelivery and abuse, and responding to service failures</li>
-        <li><strong>Retention and Use Period</strong>: Consent and withdrawal records stored by Cloudflare are retained for 3 years. Active subscription information is retained until consent withdrawal or notification-permission revocation is reflected on the server, or until the purpose is achieved. Information processed by Google and Apple is retained in accordance with each provider's policy and for the period necessary to provide the service.</li>
+        <li><strong>Retention and Use Period</strong>: General marketing consent and withdrawal records stored by Cloudflare are retained for 3 years. Active subscription information is retained until consent withdrawal or notification-permission revocation is reflected on the server, or until the purpose is achieved. Information processed by Google and Apple is retained in accordance with each provider's policy and for the period necessary to provide the service.</li>
       </ul>
       <p class="meta">
         Note: Users may refuse this marketing notification-related processing by declining consent or withdrawing consent in the App's settings. Refusal does not restrict use of GIFdot's core features, but users will not receive promotional notices such as discounts, new features, and usage tips.
       </p>
+
+      <h3 style="margin:14px 0 6px; font-size:16px;">Overseas Transfers for Friend Invitations</h3>
+      <ul>
+        <li><strong>Recipients</strong>: Cloudflare, Inc. and its affiliates (Workers, D1, Queues), Apple Inc. and its affiliates (AppTransaction, App Attest, APNs), and Google LLC and its affiliates (FCM)</li>
+        <li><strong>Destination Countries</strong>: The United States and other countries where each provider operates service infrastructure</li>
+        <li><strong>Transferred Items</strong>: Cloudflare receives participant identifiers, invitation relationships, original App acquisition time, conversion completion, reward and verification information, FCM tokens, and delivery records. Apple receives information needed to verify transactions, offer codes, and App integrity. Google's and Apple's push services receive notification tokens and delivery information.</li>
+        <li><strong>Timing and Method</strong>: Transferred over encrypted networks when Friend Invitation participation or rewards are verified, notification targets are updated, or notifications are sent</li>
+        <li><strong>Purpose</strong>: Verifying Friend Invitation relationships and rewards, preventing duplicate rewards, and sending Friend Invitation reward notifications</li>
+        <li><strong>Retention and Use Period</strong>: Information the operator stores in Cloudflare follows the Friend Invitation token, participation, and reward retention rules in Section 4. Apple and Google retain information according to their policies and for the period necessary to provide their services.</li>
+      </ul>
 
       <h3 style="margin:14px 0 6px; font-size:16px;">Overseas Transfers for Error Diagnostics</h3>
       <ul>
@@ -239,6 +275,7 @@
         <li>How to exercise: Request by email to <a href="mailto:appledev1920@gmail.com">appledev1920@gmail.com</a></li>
         <li>Handling: Processed within the period prescribed by applicable law, subject to any legal restrictions</li>
         <li>Withdraw consent to promotional notifications: Turn off "Consent to Receive Promotional Information" in the App's settings, or use the opt-out action provided in a promotional notification</li>
+        <li>Withdraw Friend Invitation reward notifications: Disable GIFdot notifications in iOS Settings. If the device is offline, the change is reflected on the next online synchronization.</li>
         <li>Block all App notifications: Disable notifications for GIFdot in iOS Settings</li>
       </ul>
     </section>
@@ -270,7 +307,7 @@
     </section>
 
     <div class="box" style="margin-top:24px;">
-      <p class="meta">Document Version: 1.4 · App: GIFdot · Contact: <a href="mailto:appledev1920@gmail.com">appledev1920@gmail.com</a></p>
+      <p class="meta">Document Version: 1.5 · App: GIFdot · Contact: <a href="mailto:appledev1920@gmail.com">appledev1920@gmail.com</a></p>
     </div>
   </main>
 
