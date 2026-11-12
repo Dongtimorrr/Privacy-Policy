@@ -102,6 +102,9 @@
         Note: The above information may be processed through third-party SDKs such as Firebase Analytics, Google Mobile Ads SDK (AdMob), and RevenueCat.
       </p>
       <p class="meta">
+        App versions that include the PostHog SDK send a pseudonymous identifier generated for each app installation, app, operating-system and device information, and screen, feature, conversion, saving and purchase events to PostHog US Cloud for usage analysis. This integration does not send original photos or videos, caption or watermark content, raw transaction identifiers or push tokens, and does not use session replay or automatic screen capture. IP-based location enrichment is disabled, but IP addresses and request information may still be processed when handling network requests.
+      </p>
+      <p class="meta">
         Note: iOS app versions that include tracking permission requests use Apple's AppTrackingTransparency (ATT) prompt. If you allow tracking and the applicable regional privacy consent requirements are met, the Google Mobile Ads SDK (AdMob) may use device identifiers, including the advertising identifier (IDFA), with data from other companies' apps and websites to deliver personalized ads and measure ad effectiveness.
       </p>
       <p class="meta">
@@ -193,6 +196,12 @@
         <li><strong>Purpose</strong>: Checking purchase and subscription status, validating receipts, providing Pro features, and analyzing purchases</li>
         <li><strong>Items</strong>: Anonymous App User ID, purchase and subscription history, receipt or purchase token, product and transaction identifiers, price and currency, and basic technical information</li>
       </ul>
+      <ul>
+        <li><strong>Recipient</strong>: PostHog, Inc.</li>
+        <li><strong>Purpose</strong>: Analysis of app usage and feature, conversion and purchase flows, and app quality improvement</li>
+        <li><strong>Items</strong>: Pseudonymous app installation identifiers, app, operating-system and device information, screen, feature, conversion, saving and purchase events, and network request information</li>
+      </ul>
+      <p class="meta">For information about PostHog's processing practices, see the <a href="https://posthog.com/privacy" rel="noopener noreferrer">PostHog Privacy Policy</a>.</p>
       <p class="meta">
         Please also refer to the <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google Privacy Policy</a> and
         <a href="https://www.revenuecat.com/privacy/" rel="noopener noreferrer">RevenueCat Privacy Policy</a>.
@@ -204,6 +213,7 @@
       <p>The operator may outsource part of the processing activities to the following external services:</p>
       <ul>
         <li>Google Firebase Analytics</li>
+        <li>PostHog, Inc. (PostHog US Cloud): Analysis of app usage and feature, conversion and purchase flows</li>
         <li>Google Mobile Ads SDK (AdMob)</li>
         <li>RevenueCat, Inc.: Purchase and subscription receipt validation, entitlement management, and purchase analytics</li>
         <li>Google Firebase Cloud Messaging (FCM): Management of push registration tokens and topics, and notification delivery</li>
@@ -215,6 +225,16 @@
 
     <section id="s7">
       <h2>7. Overseas Transfer</h2>
+      <h3 style="margin:14px 0 6px; font-size:16px;">Overseas Transfer for PostHog Usage Analytics</h3>
+      <ul>
+        <li><strong>Recipient</strong>: PostHog, Inc. (<a href="mailto:privacy@posthog.com">privacy@posthog.com</a>)</li>
+        <li><strong>Destination country</strong>: United States (PostHog US Cloud)</li>
+        <li><strong>Items</strong>: Pseudonymous app installation identifiers, app, operating-system and device information, screen, feature, conversion, saving and purchase events, and network request information such as IP addresses</li>
+        <li><strong>Timing and method</strong>: Transmission over encrypted networks when launching or using features in app versions that include this SDK</li>
+        <li><strong>Purpose</strong>: Analysis of app usage and feature, conversion and purchase flows, and app quality improvement</li>
+        <li><strong>Retention and use period</strong>: For the period needed for analysis, subject to PostHog's service policies, project retention settings and applicable law</li>
+      </ul>
+      <p class="meta">Requests to suspend processing or delete PostHog data, and questions about overseas transfers, can be submitted to the contact email in Section 8. Because the App uses a pseudonymous identifier for each installation, additional steps may be needed to locate the requested information.</p>
       <p>When using Firebase Analytics and Google Mobile Ads SDK, personal information or information that may constitute personal information may be transferred outside the Republic of Korea.</p>
       <ul>
         <li><strong>Recipient</strong>: Google LLC and its affiliates</li>
@@ -310,7 +330,7 @@
     </section>
 
     <div class="box" style="margin-top:24px;">
-      <p class="meta">Document Version: 1.5 · App: GIFdot · Contact: <a href="mailto:appledev1920@gmail.com">appledev1920@gmail.com</a></p>
+      <p class="meta">Document Version: 1.6 · App: GIFdot · Contact: <a href="mailto:appledev1920@gmail.com">appledev1920@gmail.com</a></p>
     </div>
   </main>
 

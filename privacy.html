@@ -102,6 +102,9 @@
         ※ 위 정보는 Firebase Analytics, Google Mobile Ads SDK(AdMob), RevenueCat 등 제3자 SDK를 통해 처리될 수 있습니다.
       </p>
       <p class="meta">
+        PostHog SDK가 포함된 앱 버전에서는 앱 설치별로 생성된 가명 식별자, 앱·운영체제·기기 정보와 화면·기능 이용, 변환·저장·구매 관련 이벤트를 PostHog US Cloud로 전송하여 이용 현황을 분석합니다. 이 연동은 사진·동영상 원본, 자막·워터마크 내용, 거래 식별자 원문, 푸시 토큰을 전송하지 않으며 화면 녹화와 자동 화면 캡처를 사용하지 않습니다. IP 주소를 이용한 위치 정보 보강은 꺼져 있지만, 네트워크 요청 처리 과정에서 IP 주소와 요청 정보가 처리될 수 있습니다.
+      </p>
+      <p class="meta">
         ※ 추적 권한 요청 기능이 포함된 iOS 앱에서는 Apple의 AppTrackingTransparency(ATT) 권한을 요청합니다. 이용자가 추적을 허용하고 적용되는 지역별 개인정보 동의 조건이 충족된 경우, Google Mobile Ads SDK(AdMob)가 광고 식별자(IDFA) 등 기기 식별자를 다른 회사의 앱·웹사이트 데이터와 결합하여 맞춤형 광고 제공 및 광고 효과 측정에 사용할 수 있습니다.
       </p>
       <p class="meta">
@@ -193,6 +196,12 @@
         <li><strong>이용 목적</strong>: 구매·구독 상태 확인, 영수증 검증, Pro 기능 제공 및 구매 분석</li>
         <li><strong>제공 항목</strong>: 익명 앱 사용자 식별자, 구매·구독 내역, 영수증 또는 구매 토큰, 상품·거래 식별자, 가격·통화 및 기본 기술 정보</li>
       </ul>
+      <ul>
+        <li><strong>제공받는 자</strong>: PostHog, Inc.</li>
+        <li><strong>제공 목적</strong>: 앱 이용 현황 및 기능·변환·구매 흐름 분석, 앱 품질 개선</li>
+        <li><strong>제공 항목</strong>: 가명 앱 설치 식별자, 앱·운영체제·기기 정보, 화면·기능 이용 및 변환·저장·구매 이벤트, 네트워크 요청 정보</li>
+      </ul>
+      <p class="meta">PostHog의 처리 방식은 <a href="https://posthog.com/privacy" rel="noopener noreferrer">PostHog 개인정보처리방침</a>에서 확인할 수 있습니다.</p>
       <p class="meta">
         관련 정보는 <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google 개인정보처리방침</a>과
         <a href="https://www.revenuecat.com/privacy/" rel="noopener noreferrer">RevenueCat 개인정보처리방침</a>에서도 확인할 수 있습니다.
@@ -204,6 +213,7 @@
       <p>운영자는 서비스 제공을 위해 다음 외부 서비스에 개인정보 처리 업무의 일부를 위탁할 수 있습니다.</p>
       <ul>
         <li>Google Firebase Analytics</li>
+        <li>PostHog, Inc.(PostHog US Cloud): 앱 이용 현황 및 기능·변환·구매 흐름 분석</li>
         <li>Google Mobile Ads SDK(AdMob)</li>
         <li>RevenueCat, Inc.: 구매·구독 영수증 검증, 이용 권한 관리 및 구매 분석</li>
         <li>Google Firebase Cloud Messaging(FCM): 푸시 등록 토큰·주제 관리 및 알림 전송</li>
@@ -215,6 +225,16 @@
 
     <section id="s7">
       <h2>7. 국외 이전</h2>
+      <h3 style="margin:14px 0 6px; font-size:16px;">PostHog 이용 현황 분석을 위한 국외 이전</h3>
+      <ul>
+        <li><strong>이전받는 자</strong>: PostHog, Inc. (<a href="mailto:privacy@posthog.com">privacy@posthog.com</a>)</li>
+        <li><strong>이전 국가</strong>: 미국(PostHog US Cloud)</li>
+        <li><strong>이전 항목</strong>: 가명 앱 설치 식별자, 앱·운영체제·기기 정보, 화면·기능 이용 및 변환·저장·구매 이벤트, IP 주소 등 네트워크 요청 정보</li>
+        <li><strong>이전 시점 및 방법</strong>: 해당 SDK가 포함된 앱의 실행 및 기능 이용 시 암호화된 네트워크를 통해 전송</li>
+        <li><strong>이전 목적</strong>: 앱 이용 현황 및 기능·변환·구매 흐름 분석, 앱 품질 개선</li>
+        <li><strong>보유 및 이용 기간</strong>: 분석 목적에 필요한 기간 및 PostHog의 서비스 정책·프로젝트 보관 설정과 관련 법령에 따른 기간</li>
+      </ul>
+      <p class="meta">PostHog 관련 처리정지·삭제 요청 및 국외 이전에 관한 문의는 제8항의 문의 이메일로 접수할 수 있습니다. 앱 설치별 가명 식별자를 사용하므로 요청한 정보의 확인을 위해 추가 안내가 필요할 수 있습니다.</p>
       <p>운영자는 Firebase Analytics 및 Google Mobile Ads SDK 이용 과정에서 개인정보 또는 개인정보에 해당할 수 있는 정보가 대한민국 외 지역으로 이전될 수 있습니다.</p>
       <ul>
         <li><strong>이전받는 자</strong>: Google LLC 및 그 계열사</li>
@@ -310,7 +330,7 @@
     </section>
 
     <div class="box" style="margin-top:24px;">
-      <p class="meta">문서 버전: 1.5 · 앱: GIFdot · 연락: <a href="mailto:appledev1920@gmail.com">appledev1920@gmail.com</a></p>
+      <p class="meta">문서 버전: 1.6 · 앱: GIFdot · 연락: <a href="mailto:appledev1920@gmail.com">appledev1920@gmail.com</a></p>
     </div>
   </main>
 
